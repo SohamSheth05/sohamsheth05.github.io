@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soham Robinkumar Sheth | Android Developer & Team Lead</title>
-  <meta name="description" content="Portfolio of Soham Robinkumar Sheth, Android Developer and Team Lead with 10+ years of experience building scalable mobile applications." />
+  <meta name="description" content="Portfolio of Soham Robinkumar Sheth, Android Developer and Team Lead with 10+ years of Android experience." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,18 +18,17 @@
     }
 
     :root {
-      --bg: #0b1220;
-      --panel: #111b2e;
-      --panel-strong: #17243a;
-      --line: rgba(148, 163, 184, 0.18);
-      --text: #f8fafc;
-      --muted: #a7b1c2;
-      --soft: #d8e1ee;
-      --teal: #60a5fa;
-      --blue: #93c5fd;
-      --coral: #cbd5e1;
-      --gold: #f8fafc;
-      --shadow: 0 22px 58px rgba(0, 0, 0, 0.28);
+      --ink: #1e1c18;
+      --muted: #6f6a61;
+      --paper: #fffaf0;
+      --cream: #f6ead0;
+      --yellow: #f7c948;
+      --gold: #d99a22;
+      --green: #1f7a55;
+      --blue: #254c7b;
+      --line: rgba(30, 28, 24, 0.12);
+      --white: #ffffff;
+      --shadow: 0 26px 70px rgba(68, 52, 24, 0.16);
     }
 
     html {
@@ -40,22 +39,12 @@
       min-height: 100vh;
       overflow-x: hidden;
       background:
-        linear-gradient(180deg, #0b1220 0%, #0f172a 52%, #111827 100%);
-      color: var(--text);
+        radial-gradient(circle at 16% 10%, rgba(247, 201, 72, 0.32), transparent 25%),
+        radial-gradient(circle at 86% 18%, rgba(31, 122, 85, 0.13), transparent 28%),
+        linear-gradient(180deg, #fffaf0 0%, #f6ead0 100%);
+      color: var(--ink);
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background-image:
-        linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, black, transparent 70%);
+      line-height: 1.65;
     }
 
     a {
@@ -63,18 +52,16 @@
     }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1160px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     .nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      z-index: 100;
-      width: 100%;
-      border-bottom: 1px solid var(--line);
-      background: rgba(11, 18, 32, 0.9);
+      z-index: 50;
+      border-bottom: 1px solid rgba(30, 28, 24, 0.08);
+      background: rgba(255, 250, 240, 0.86);
       backdrop-filter: blur(20px);
     }
 
@@ -82,14 +69,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 16px 0;
+      gap: 22px;
+      padding: 18px 0;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
+      color: var(--ink);
+      font-weight: 800;
       text-decoration: none;
     }
 
@@ -98,102 +87,86 @@
       width: 42px;
       height: 42px;
       place-items: center;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      border-radius: 8px;
-      background: #17243a;
-      color: #93c5fd;
-      font-weight: 900;
-    }
-
-    .brand-name {
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .brand-role {
-      display: block;
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 500;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 4px 4px 0 var(--ink);
+      font-size: 0.9rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.66);
+      padding: 7px;
     }
 
     .nav-links a {
+      border-radius: 999px;
       color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 14px;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      background: var(--ink);
+      color: var(--white);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
+      min-height: 50px;
       gap: 10px;
-      border: 1px solid transparent;
-      border-radius: 8px;
-      padding: 13px 20px;
-      font-size: 0.96rem;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 13px 22px;
+      color: var(--ink);
       font-weight: 800;
       text-decoration: none;
-      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       white-space: nowrap;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 6px 6px 0 var(--ink);
     }
 
     .btn-primary {
-      background: #2563eb;
-      color: #ffffff;
-      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.24);
+      background: var(--yellow);
     }
 
-    .btn-outline {
-      border-color: var(--line);
-      background: #111b2e;
-      color: var(--text);
-    }
-
-    .btn-outline:hover {
-      border-color: #60a5fa;
-      background: rgba(96, 165, 250, 0.12);
+    .btn-secondary {
+      background: var(--white);
     }
 
     .icon {
       width: 18px;
       height: 18px;
       flex: 0 0 auto;
-      stroke: currentColor;
-      stroke-width: 2.2;
       fill: none;
+      stroke: currentColor;
       stroke-linecap: round;
       stroke-linejoin: round;
+      stroke-width: 2.2;
     }
 
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 118px 0 72px;
+      padding: 82px 0 62px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
-      gap: 56px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+      gap: 50px;
       align-items: center;
     }
 
@@ -202,348 +175,268 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 22px;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      border-radius: 8px;
-      background: #111b2e;
-      padding: 9px 14px;
-      color: var(--soft);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--white);
+      padding: 9px 15px;
+      color: var(--ink);
       font-size: 0.88rem;
-      font-weight: 700;
+      font-weight: 800;
+      box-shadow: 4px 4px 0 var(--ink);
     }
 
     .status-dot {
-      width: 9px;
-      height: 9px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.12);
+      background: var(--green);
     }
 
     h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 24px;
-      font-size: clamp(2.9rem, 6vw, 5.7rem);
-      font-weight: 850;
-      line-height: 1.02;
+      font-size: clamp(3.25rem, 8vw, 7.3rem);
+      font-weight: 900;
+      line-height: 0.95;
       letter-spacing: 0;
     }
 
-    .gradient-text {
-      background: linear-gradient(135deg, #93c5fd, #f8fafc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .marker {
+      position: relative;
+      display: inline-block;
+      padding: 0 8px;
+    }
+
+    .marker::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 8%;
+      z-index: -1;
+      height: 32%;
+      border-radius: 999px;
+      background: var(--yellow);
     }
 
     .hero-copy {
       max-width: 690px;
       margin-bottom: 30px;
-      color: var(--soft);
-      font-size: 1.11rem;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .contact-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 30px;
     }
 
     .trust-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 0.93rem;
-      font-weight: 700;
+      gap: 10px;
+      margin-top: 26px;
     }
 
-    .trust-row span {
+    .trust-row span,
+    .skill,
+    .project-tags span {
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #111b2e;
-      padding: 8px 12px;
-    }
-
-    .device-stage {
-      position: relative;
-      min-height: 610px;
-      display: grid;
-      place-items: center;
-    }
-
-    .orbit-card,
-    .phone {
-      box-shadow: var(--shadow);
-    }
-
-    .orbit-card {
-      position: absolute;
-      z-index: 2;
-      width: 184px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #111b2e;
-      padding: 16px;
-      backdrop-filter: blur(18px);
-    }
-
-    .orbit-card strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 1.25rem;
-    }
-
-    .orbit-card span {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
       color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 700;
+      font-size: 0.86rem;
+      font-weight: 800;
+      padding: 9px 13px;
     }
 
-    .orbit-card.top {
-      top: 40px;
-      left: 4px;
-      border-color: rgba(148, 163, 184, 0.18);
-    }
-
-    .orbit-card.bottom {
-      right: 0;
-      bottom: 78px;
-      border-color: rgba(148, 163, 184, 0.18);
-    }
-
-    .phone {
+    .portrait-card {
       position: relative;
-      z-index: 1;
-      width: min(330px, 86vw);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      border-radius: 12px;
-      background: #0f172a;
-      padding: 12px;
+      border: 2px solid var(--ink);
+      border-radius: 34px;
+      background: var(--white);
+      padding: 18px;
+      box-shadow: 12px 12px 0 var(--ink);
+      transform: rotate(1deg);
     }
 
-    .phone::before {
-      content: "";
-      position: absolute;
-      top: 24px;
-      left: 50%;
-      z-index: 3;
-      width: 72px;
-      height: 6px;
-      transform: translateX(-50%);
-      border-radius: 8px;
-      background: rgba(148, 163, 184, 0.35);
-    }
-
-    .phone-screen {
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 8px;
-      background:
-        linear-gradient(180deg, #17243a, #111827 40%),
-        #111827;
-      padding: 44px 18px 22px;
-    }
-
-    .app-header {
+    .portrait-top {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 22px;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .app-badge {
-      border-radius: 8px;
-      background: rgba(96, 165, 250, 0.13);
-      padding: 7px 11px;
-      color: #bfdbfe;
+    .portrait-badge {
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--cream);
+      padding: 8px 13px;
       font-size: 0.78rem;
       font-weight: 900;
     }
 
-    .app-avatar {
+    .portrait-window {
+      overflow: hidden;
+      border: 2px solid var(--ink);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 28%, #f7d369 0 16%, transparent 17%),
+        linear-gradient(180deg, #f2b642 0 46%, #203a56 47% 100%);
+      min-height: 392px;
       display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 8px;
-      background: #2563eb;
-      color: #ffffff;
-      font-weight: 900;
+      align-items: end;
+      justify-items: center;
+      padding: 34px 24px 0;
     }
 
-    .code-panel {
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 8px;
-      background: #0b1220;
-      padding: 16px;
-      color: #d8e1ee;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.8rem;
-      line-height: 1.75;
+    .avatar {
+      position: relative;
+      width: min(250px, 72%);
+      aspect-ratio: 0.78;
+      border: 2px solid var(--ink);
+      border-bottom: 0;
+      border-radius: 120px 120px 0 0;
+      background: linear-gradient(180deg, #f7d7bb 0 35%, #1f7a55 36% 100%);
+      box-shadow: inset 0 -64px 0 #17212f;
     }
 
-    .code-panel span {
-      color: #93c5fd;
+    .avatar::before,
+    .avatar::after {
+      content: "";
+      position: absolute;
+      top: 28%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--ink);
     }
 
-    .phone-metrics {
+    .avatar::before {
+      left: 34%;
+    }
+
+    .avatar::after {
+      right: 34%;
+    }
+
+    .portrait-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin: 16px 0;
+      margin-top: 14px;
     }
 
-    .mini-metric {
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 8px;
-      background: #17243a;
-      padding: 14px;
+    .mini-stat {
+      border: 2px solid var(--ink);
+      border-radius: 22px;
+      background: var(--paper);
+      padding: 16px;
     }
 
-    .mini-metric b {
+    .mini-stat strong {
       display: block;
-      color: #f8fafc;
-      font-size: 1.32rem;
-      line-height: 1.1;
+      font-size: 1.55rem;
+      line-height: 1;
     }
 
-    .mini-metric small {
-      color: #a7b1c2;
-      font-weight: 700;
-    }
-
-    .signal-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .signal-list div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 8px;
-      background: #17243a;
-      padding: 10px 12px;
-      color: #d8e1ee;
-      font-size: 0.82rem;
+    .mini-stat span {
+      color: var(--muted);
+      font-size: 0.8rem;
       font-weight: 800;
     }
 
-    .signal-list i {
-      width: 56px;
-      height: 7px;
-      border-radius: 8px;
-      background: #60a5fa;
-    }
-
     section {
-      padding: 92px 0;
+      padding: 82px 0;
     }
 
     .section-heading {
-      max-width: 720px;
-      margin: 0 auto 44px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 34px;
     }
 
     .section-kicker {
-      margin-bottom: 10px;
-      color: var(--teal);
+      color: var(--gold);
       font-size: 0.82rem;
-      font-weight: 850;
-      letter-spacing: 0.08em;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
+      font-size: clamp(2.1rem, 4.5vw, 4rem);
       font-weight: 900;
-      line-height: 1.08;
+      line-height: 1.04;
       letter-spacing: 0;
     }
 
     .section-heading p {
-      margin-top: 14px;
       color: var(--muted);
-      font-size: 1.04rem;
+      font-size: 1rem;
     }
 
-    .metrics-grid {
+    .metric-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    .metric-card,
-    .card,
+    .metric,
+    .panel,
     .project-card,
     .timeline-item,
     .contact-panel {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      backdrop-filter: blur(18px);
+      border: 2px solid var(--ink);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.76);
       box-shadow: var(--shadow);
     }
 
-    .metric-card {
-      border-radius: 8px;
+    .metric {
       padding: 24px;
     }
 
-    .metric-card strong {
+    .metric strong {
       display: block;
       margin-bottom: 8px;
-      color: var(--text);
-      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 4vw, 3.3rem);
       line-height: 1;
     }
 
-    .metric-card span {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .card {
-      border-radius: 8px;
-      padding: 28px;
-    }
-
-    .card h3,
-    .project-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-    }
-
-    .card p,
+    .metric span,
+    .panel p,
     .project-card p,
     .timeline-item p,
     .contact-panel p {
       color: var(--muted);
     }
 
-    .stack-grid {
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 30px;
+    }
+
+    .panel h3,
+    .project-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.32rem;
+    }
+
+    .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 20px;
-    }
-
-    .stack-grid span {
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: 8px;
-      background: #17243a;
-      padding: 9px 13px;
-      color: var(--soft);
-      font-size: 0.87rem;
-      font-weight: 800;
     }
 
     .project-grid {
@@ -553,99 +446,92 @@
     }
 
     .project-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 282px;
-      border-radius: 8px;
-      padding: 26px;
+      padding: 28px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(145deg, rgba(96, 165, 250, 0.08), transparent 42%);
+    .project-card:nth-child(2) {
+      background: #203a56;
+      color: var(--white);
+    }
+
+    .project-card:nth-child(2) p,
+    .project-card:nth-child(2) .project-tags span {
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .project-icon {
       display: grid;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 28px;
+      width: 54px;
+      height: 54px;
       place-items: center;
-      border-radius: 8px;
-      background: rgba(96, 165, 250, 0.12);
-      color: var(--teal);
+      border: 2px solid currentColor;
+      border-radius: 18px;
+      margin-bottom: 26px;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 22px;
-    }
-
-    .project-tags span {
-      border-radius: 8px;
-      background: rgba(148, 163, 184, 0.12);
-      padding: 7px 10px;
-      color: var(--soft);
-      font-size: 0.75rem;
-      font-weight: 800;
+      margin-top: auto;
+      padding-top: 24px;
     }
 
     .timeline {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 190px 1fr;
+      grid-template-columns: 180px 1fr;
       gap: 24px;
-      border-radius: 8px;
       padding: 24px;
+      box-shadow: none;
     }
 
     .timeline-date {
-      color: var(--teal);
-      font-size: 0.9rem;
+      color: var(--gold);
       font-weight: 900;
     }
 
     .timeline-item h3 {
-      margin-bottom: 4px;
-      font-size: 1.16rem;
+      margin-bottom: 5px;
     }
 
     .timeline-item h4 {
       margin-bottom: 10px;
-      color: var(--soft);
+      color: var(--blue);
       font-size: 0.95rem;
-      font-weight: 800;
     }
 
     .contact-panel {
-      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      background: var(--ink);
+      color: var(--white);
       padding: 34px;
-      text-align: center;
-      box-shadow: var(--shadow);
     }
 
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 24px;
+    .contact-panel p {
+      color: rgba(255, 255, 255, 0.74);
+      margin-top: 12px;
+    }
+
+    .contact-panel .btn-secondary {
+      background: var(--white);
     }
 
     .floating-actions {
       position: fixed;
       right: 18px;
       bottom: 18px;
-      z-index: 90;
+      z-index: 40;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -656,91 +542,64 @@
       width: 50px;
       height: 50px;
       place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #111b2e;
-      color: var(--text);
-      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.26);
-      backdrop-filter: blur(18px);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 4px 4px 0 var(--ink);
+      transition: transform 0.2s ease;
     }
 
     .float-btn:hover {
-      transform: translateY(-2px);
-      border-color: #60a5fa;
+      transform: translateY(-3px);
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 34px 0;
+      padding: 36px 0;
       color: var(--muted);
       text-align: center;
     }
 
     @media (max-width: 980px) {
-      .hero {
-        padding-top: 112px;
-      }
-
       .hero-grid,
-      .about-grid {
+      .about-grid,
+      .contact-panel,
+      .section-heading {
         grid-template-columns: 1fr;
       }
 
-      .device-stage {
-        min-height: 560px;
-      }
-
-      .metrics-grid,
+      .metric-grid,
       .project-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .portrait-card {
+        transform: none;
       }
     }
 
     @media (max-width: 720px) {
       .container {
-        width: min(100% - 28px, 1120px);
+        width: min(100% - 28px, 1160px);
       }
 
       .nav-links {
         display: none;
       }
 
-      .brand-role {
-        display: none;
-      }
-
       .hero {
-        min-height: auto;
-        padding: 108px 0 54px;
+        padding-top: 54px;
       }
 
-      .hero-copy {
-        font-size: 1rem;
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.4rem);
       }
 
-      .hero-actions .btn {
+      .hero-actions .btn,
+      .contact-actions .btn {
         width: 100%;
       }
 
-      .device-stage {
-        min-height: 500px;
-      }
-
-      .orbit-card {
-        width: 154px;
-        padding: 13px;
-      }
-
-      .orbit-card.top {
-        top: 6px;
-      }
-
-      .orbit-card.bottom {
-        bottom: 30px;
-      }
-
-      .metrics-grid,
+      .metric-grid,
       .project-grid {
         grid-template-columns: 1fr;
       }
@@ -750,14 +609,8 @@
         gap: 8px;
       }
 
-      .floating-actions {
-        right: 12px;
-        bottom: 12px;
-      }
-
-      .float-btn {
-        width: 46px;
-        height: 46px;
+      .portrait-window {
+        min-height: 320px;
       }
     }
   </style>
@@ -766,18 +619,15 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Soham Robinkumar Sheth portfolio home">
+      <a class="brand" href="#top" aria-label="Soham Sheth portfolio home">
         <span class="brand-mark">SS</span>
-        <span>
-          <span class="brand-name">Soham Sheth</span>
-          <span class="brand-role">Android Developer & Team Lead</span>
-        </span>
+        <span>Soham Sheth</span>
       </a>
 
       <div class="nav-links">
         <a href="#impact">Impact</a>
-        <a href="#about">Expertise</a>
-        <a href="#projects">Work</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
@@ -793,12 +643,12 @@
             Available for senior Android and technical leadership opportunities
           </div>
 
-          <h2>
-            Senior Android Developer focused on <span class="gradient-text">reliable product delivery.</span>
-          </h2>
+          <h1>
+            Android Developer & <span class="marker">Team Lead</span>
+          </h1>
 
           <p class="hero-copy">
-            I am Soham Robinkumar Sheth, an Android Developer and Team Lead from Ahmedabad with 10+ years of experience building scalable mobile products using Kotlin, Java, Jetpack Compose, MVVM, Hilt, Firebase, and modern Android architecture.
+            I am Soham Robinkumar Sheth, a senior Android developer from Ahmedabad with 10+ years of experience building scalable mobile products, leading engineering teams, and delivering production-ready Android applications.
           </p>
 
           <div class="hero-actions">
@@ -806,87 +656,62 @@
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
               Contact Me
             </a>
-            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn btn-outline">
+            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn btn-secondary">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
               Download Resume
             </a>
-            <a href="https://www.linkedin.com/in/soham-robinkumar-sheth" target="_blank" rel="noopener" class="btn btn-outline">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11v8"/><path d="M8 7v.01"/><path d="M12 19v-8"/><path d="M16 19v-5c0-2-1-3-2.5-3S12 12 12 12"/><path d="M4 4h16v16H4z"/></svg>
+            <a href="https://www.linkedin.com/in/soham-robinkumar-sheth" target="_blank" rel="noopener" class="btn btn-secondary">
               LinkedIn
             </a>
           </div>
 
           <div class="trust-row">
-            <span>Kotlin-first delivery</span>
-            <span>Architecture ownership</span>
-            <span>Release-focused execution</span>
+            <span>Kotlin</span>
+            <span>Jetpack Compose</span>
+            <span>MVVM</span>
+            <span>Firebase</span>
+            <span>Team Leadership</span>
           </div>
         </div>
 
-        <div class="device-stage" aria-label="Android development visual">
-          <div class="orbit-card top">
-            <strong>10+ yrs</strong>
-            <span>shipping Android products</span>
+        <aside class="portrait-card" aria-label="Portfolio highlight card">
+          <div class="portrait-top">
+            <span class="portrait-badge">ANDROID LEAD</span>
+            <span class="portrait-badge">10+ YEARS</span>
           </div>
-
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="app-header">
-                <span class="app-badge">ANDROID LEAD</span>
-                <span class="app-avatar">SS</span>
-              </div>
-
-              <div class="code-panel">
-                <div><span>role</span> Senior Android Lead</div>
-                <div><span>stack</span> Kotlin, Java, Compose</div>
-                <div><span>focus</span> Architecture, Quality</div>
-                <div><span>delivery</span> Scalable mobile products</div>
-                <div>}</div>
-              </div>
-
-              <div class="phone-metrics">
-                <div class="mini-metric">
-                  <b>20+</b>
-                  <small>Apps</small>
-                </div>
-                <div class="mini-metric">
-                  <b>5+</b>
-                  <small>Teams</small>
-                </div>
-              </div>
-
-              <div class="signal-list">
-                <div><span>Performance</span><i></i></div>
-                <div><span>Architecture</span><i></i></div>
-                <div><span>Delivery</span><i></i></div>
-              </div>
+          <div class="portrait-window">
+            <div class="avatar" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-stats">
+            <div class="mini-stat">
+              <strong>20+</strong>
+              <span>Apps delivered</span>
+            </div>
+            <div class="mini-stat">
+              <strong>5+</strong>
+              <span>Teams supported</span>
             </div>
           </div>
-
-          <div class="orbit-card bottom">
-            <strong>Lead</strong>
-            <span>mentoring, planning, architecture</span>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section id="impact">
       <div class="container">
-        <div class="metrics-grid">
-          <div class="metric-card">
+        <div class="metric-grid">
+          <div class="metric">
             <strong>10+</strong>
             <span>Years of Android engineering experience</span>
           </div>
-          <div class="metric-card">
+          <div class="metric">
             <strong>20+</strong>
             <span>Mobile applications delivered</span>
           </div>
-          <div class="metric-card">
+          <div class="metric">
             <strong>5+</strong>
             <span>Companies and product teams supported</span>
           </div>
-          <div class="metric-card">
+          <div class="metric">
             <strong>Lead</strong>
             <span>Team ownership, mentoring, and architecture</span>
           </div>
@@ -897,51 +722,52 @@
     <section id="about">
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker">Core Expertise</div>
-          <h2>Senior Android execution with leadership calm.</h2>
-          <p>Strong mobile architecture, clean delivery habits, and the judgment to guide teams through production work.</p>
+          <div>
+            <div class="section-kicker">About Me</div>
+            <h2>Reliable Android execution with a leadership mindset.</h2>
+          </div>
+          <p>Strong mobile architecture, clean delivery habits, and the judgment to guide Android teams through production work.</p>
         </div>
 
         <div class="about-grid">
-          <div class="card">
+          <div class="panel">
             <h3>What I Bring</h3>
             <p>
               I build scalable Android apps, improve performance, integrate APIs, manage release quality, and help engineering teams move with clarity. My work spans enterprise apps, healthcare BLE-IOT flows, Firebase-backed products, and modern Kotlin architecture.
             </p>
           </div>
 
-          <div class="card" id="skills">
+          <div class="panel">
             <h3>Technology Stack</h3>
             <p>Hands-on across the tools recruiters and engineering teams expect from a modern Android lead.</p>
-            <div class="stack-grid">
-              <span>Kotlin</span>
-              <span>Java</span>
-              <span>Jetpack Compose</span>
-              <span>MVVM</span>
-              <span>Hilt</span>
-              <span>Firebase</span>
-              <span>Retrofit</span>
-              <span>Room DB</span>
-              <span>RxJava</span>
-              <span>SQLite</span>
-              <span>Gradle</span>
-              <span>Material Design</span>
-              <span>GitHub</span>
-              <span>GitLab</span>
-              <span>CI/CD</span>
-              <span>Android SDK</span>
+            <div class="skills">
+              <span class="skill">Kotlin</span>
+              <span class="skill">Java</span>
+              <span class="skill">Jetpack Compose</span>
+              <span class="skill">MVVM</span>
+              <span class="skill">Hilt</span>
+              <span class="skill">Firebase</span>
+              <span class="skill">Retrofit</span>
+              <span class="skill">Room DB</span>
+              <span class="skill">RxJava</span>
+              <span class="skill">SQLite</span>
+              <span class="skill">Gradle</span>
+              <span class="skill">CI/CD</span>
+              <span class="skill">Android SDK</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="work">
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker">Selected Work Themes</div>
-          <h2>Built for real users, real releases, and real teams.</h2>
-          <p>Representative areas from my Android work across enterprise, connected devices, Firebase, and product delivery.</p>
+          <div>
+            <div class="section-kicker">Selected Work</div>
+            <h2>Work themes recruiters can scan quickly.</h2>
+          </div>
+          <p>A compact view of the Android product areas, leadership work, and delivery strengths represented in my experience.</p>
         </div>
 
         <div class="project-grid">
@@ -990,8 +816,11 @@
     <section id="experience">
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker">Experience</div>
-          <h2>A decade of Android work, from hands-on builds to team leadership.</h2>
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2>A decade of Android work.</h2>
+          </div>
+          <p>From hands-on mobile development to technical leadership, mentoring, architecture ownership, and production delivery.</p>
         </div>
 
         <div class="timeline">
@@ -1055,14 +884,15 @@
     <section id="contact">
       <div class="container">
         <div class="contact-panel">
-          <div class="section-kicker">Let's Connect</div>
-          <h2>Ready to build reliable Android products.</h2>
-          <p>Open to Android development roles, technical leadership, freelance collaboration, and remote mobile engineering opportunities.</p>
+          <div>
+            <div class="section-kicker">Let's Connect</div>
+            <h2>Ready to build reliable Android products.</h2>
+            <p>Open to Android development roles, technical leadership, freelance collaboration, and remote mobile engineering opportunities.</p>
+          </div>
           <div class="contact-actions">
             <a href="mailto:soham.sheth2@gmail.com" class="btn btn-primary">Email Me</a>
-            <a href="tel:+918401026643" class="btn btn-outline">Call Me</a>
-            <a href="https://www.linkedin.com/in/soham-robinkumar-sheth" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn btn-outline">Download Resume</a>
+            <a href="tel:+918401026643" class="btn btn-secondary">Call Me</a>
+            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn btn-secondary">Download Resume</a>
           </div>
         </div>
       </div>
@@ -1083,40 +913,5 @@
       © 2026 Soham Robinkumar Sheth. Android Developer & Team Lead.
     </div>
   </footer>
-
-  <script>
-    const metricNumbers = document.querySelectorAll(".metric-card strong, .mini-metric b");
-
-    const revealNumber = (node) => {
-      const text = node.textContent.trim();
-      const match = text.match(/^(\d+)(.*)$/);
-      if (!match) return;
-
-      const target = Number(match[1]);
-      const suffix = match[2];
-      let current = 0;
-      const step = Math.max(1, Math.ceil(target / 34));
-
-      const tick = () => {
-        current = Math.min(target, current + step);
-        node.textContent = `${current}${suffix}`;
-        if (current < target) requestAnimationFrame(tick);
-      };
-
-      tick();
-    };
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting || entry.target.dataset.counted) return;
-          entry.target.dataset.counted = "true";
-          revealNumber(entry.target);
-        });
-      }, { threshold: 0.6 });
-
-      metricNumbers.forEach((node) => observer.observe(node));
-    }
-  </script>
 </body>
 </html>
