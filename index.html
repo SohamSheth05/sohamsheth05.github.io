@@ -18,20 +18,17 @@
     }
 
     :root {
-      --ink: #1b1f24;
-      --muted: #5f6976;
-      --paper: #f7faf7;
+      --ink: #111827;
+      --muted: #5f6775;
+      --paper: #f6f7f9;
       --panel: #ffffff;
-      --soft: #e8f5e9;
-      --green: #1e8e3e;
-      --green-strong: #0b6f35;
-      --blue: #1a73e8;
-      --yellow: #fbbc04;
-      --red: #ea4335;
-      --aqua: #d9f2ec;
-      --line: rgba(27, 31, 36, 0.1);
+      --soft: #eef1f5;
+      --accent: #334155;
+      --accent-strong: #0f172a;
+      --silver: #d8dee8;
+      --line: rgba(17, 24, 39, 0.1);
       --white: #ffffff;
-      --shadow: 0 24px 60px rgba(60, 64, 67, 0.12);
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
     }
 
     html {
@@ -42,10 +39,9 @@
       min-height: 100vh;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 10% 8%, rgba(30, 142, 62, 0.16), transparent 26%),
-        radial-gradient(circle at 88% 12%, rgba(26, 115, 232, 0.14), transparent 28%),
-        radial-gradient(circle at 78% 78%, rgba(251, 188, 4, 0.12), transparent 26%),
-        linear-gradient(180deg, #fbfdf9 0%, #eef7f1 100%);
+        linear-gradient(90deg, rgba(17, 24, 39, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%);
+      background-size: 72px 100%, auto;
       color: var(--ink);
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
@@ -65,7 +61,7 @@
       top: 0;
       z-index: 50;
       border-bottom: 1px solid rgba(60, 64, 67, 0.08);
-      background: rgba(251, 253, 249, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(20px);
     }
 
@@ -91,9 +87,9 @@
       width: 42px;
       height: 42px;
       place-items: center;
-      border-radius: 16px;
-      background:
-        linear-gradient(135deg, var(--green) 0 48%, var(--blue) 48% 100%);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--ink);
       color: var(--white);
       font-size: 0.9rem;
     }
@@ -120,7 +116,7 @@
 
     .nav-links a:hover {
       background: var(--soft);
-      color: var(--green-strong);
+      color: var(--ink);
     }
 
     .nav-links a:focus-visible,
@@ -137,7 +133,7 @@
       min-height: 50px;
       gap: 10px;
       border: 1px solid rgba(60, 64, 67, 0.12);
-      border-radius: 20px;
+      border-radius: 10px;
       padding: 13px 22px;
       color: var(--ink);
       font-weight: 800;
@@ -152,8 +148,8 @@
     }
 
     .btn-primary {
-      border-color: var(--green);
-      background: var(--green);
+      border-color: var(--ink);
+      background: var(--ink);
       color: var(--white);
     }
 
@@ -188,11 +184,11 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 22px;
-      border: 1px solid rgba(30, 142, 62, 0.18);
-      border-radius: 999px;
-      background: rgba(232, 245, 233, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.86);
       padding: 9px 15px;
-      color: var(--green-strong);
+      color: var(--accent);
       font-size: 0.88rem;
       font-weight: 800;
       box-shadow: 0 12px 30px rgba(60, 64, 67, 0.08);
@@ -202,15 +198,15 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--ink);
     }
 
     h1 {
       max-width: 780px;
       margin-bottom: 24px;
-      font-size: clamp(3.1rem, 7.4vw, 6.9rem);
+      font-size: clamp(3rem, 6.6vw, 6.2rem);
       font-weight: 900;
-      line-height: 0.95;
+      line-height: 1;
       letter-spacing: 0;
     }
 
@@ -229,7 +225,7 @@
       z-index: -1;
       height: 32%;
       border-radius: 999px;
-      background: linear-gradient(90deg, rgba(30, 142, 62, 0.2), rgba(26, 115, 232, 0.16));
+      background: var(--silver);
     }
 
     .hero-copy {
@@ -269,7 +265,7 @@
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(60, 64, 67, 0.1);
-      border-radius: 34px;
+      border-radius: 20px;
       background: var(--panel);
       padding: 20px;
       box-shadow: var(--shadow);
@@ -283,10 +279,10 @@
     }
 
     .portrait-badge {
-      border: 1px solid rgba(30, 142, 62, 0.18);
+      border: 1px solid var(--line);
       border-radius: 999px;
       background: var(--soft);
-      color: var(--green-strong);
+      color: var(--accent-strong);
       padding: 8px 13px;
       font-size: 0.78rem;
       font-weight: 900;
@@ -295,12 +291,11 @@
     .lead-visual {
       position: relative;
       overflow: hidden;
-      border-radius: 32px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
       background:
-        radial-gradient(circle at 82% 16%, rgba(251, 188, 4, 0.46), transparent 18%),
-        radial-gradient(circle at 18% 86%, rgba(26, 115, 232, 0.3), transparent 24%),
-        linear-gradient(135deg, #e8f5e9, #e8f0fe 52%, #fff8e1);
-      min-height: 410px;
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      min-height: 414px;
       padding: 24px;
       color: var(--ink);
     }
@@ -313,7 +308,7 @@
       width: 190px;
       height: 190px;
       border-radius: 50%;
-      background: rgba(30, 142, 62, 0.24);
+      background: rgba(15, 23, 42, 0.04);
     }
 
     .lead-visual::after {
@@ -324,10 +319,10 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      background: rgba(234, 67, 53, 0.14);
+      background: rgba(15, 23, 42, 0.05);
     }
 
-    .phone-panel,
+    .resume-sheet,
     .lead-card,
     .system-row,
     .delivery-card {
@@ -335,76 +330,53 @@
       z-index: 1;
     }
 
-    .phone-panel {
-      width: min(278px, 76%);
-      min-height: 318px;
-      margin: 10px auto 0;
-      border: 1px solid rgba(60, 64, 67, 0.1);
-      border-radius: 36px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 28px 52px rgba(60, 64, 67, 0.2);
-      backdrop-filter: blur(14px);
-      padding: 18px;
+    .resume-sheet {
+      width: min(330px, 84%);
+      min-height: 336px;
+      margin: 6px auto 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: 0 22px 46px rgba(15, 23, 42, 0.12);
+      padding: 22px;
     }
 
-    .phone-top {
-      display: flex;
+    .resume-head {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
       align-items: center;
-      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
       margin-bottom: 18px;
     }
 
-    .phone-dot {
-      display: block;
-      width: 38px;
-      height: 5px;
-      border-radius: 999px;
-      background: rgba(60, 64, 67, 0.22);
-    }
-
-    .material-dots {
-      display: flex;
-      gap: 5px;
-    }
-
-    .material-dots span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .material-dots span:nth-child(1) {
-      background: var(--blue);
-    }
-
-    .material-dots span:nth-child(2) {
-      background: var(--red);
-    }
-
-    .material-dots span:nth-child(3) {
-      background: var(--yellow);
-    }
-
-    .material-dots span:nth-child(4) {
-      background: var(--green);
-    }
-
-    .android-mark {
+    .resume-avatar {
       display: grid;
-      width: 38px;
-      height: 38px;
+      width: 54px;
+      height: 54px;
       place-items: center;
       border-radius: 14px;
-      background: var(--green);
+      background: var(--ink);
       color: var(--white);
-      font-size: 1.16rem;
       font-weight: 900;
+    }
+
+    .resume-head strong {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .resume-head span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
     .lead-card {
       border: 1px solid rgba(60, 64, 67, 0.08);
-      border-radius: 26px;
-      background: var(--white);
+      border-radius: 14px;
+      background: #f8fafc;
       color: var(--ink);
       padding: 18px;
       margin-bottom: 14px;
@@ -412,7 +384,7 @@
 
     .lead-card small {
       display: block;
-      color: var(--green);
+      color: var(--accent);
       font-size: 0.72rem;
       font-weight: 900;
       letter-spacing: 0.1em;
@@ -422,7 +394,7 @@
     .lead-card strong {
       display: block;
       margin: 6px 0 10px;
-      font-size: 1.55rem;
+      font-size: 1.38rem;
       line-height: 1.08;
     }
 
@@ -440,7 +412,7 @@
 
     .lead-bars span:nth-child(1) {
       width: 92%;
-      background: linear-gradient(90deg, var(--green), var(--blue));
+      background: var(--ink);
     }
 
     .lead-bars span:nth-child(2) {
@@ -460,8 +432,8 @@
 
     .system-pill {
       border-radius: 18px;
-      background: rgba(232, 245, 233, 0.78);
-      color: var(--green-strong);
+      background: var(--soft);
+      color: var(--accent-strong);
       padding: 14px;
     }
 
@@ -479,9 +451,9 @@
     }
 
     .delivery-card {
-      border-radius: 20px;
-      background: #e8f0fe;
-      color: var(--blue);
+      border-radius: 14px;
+      background: #f8fafc;
+      color: var(--ink);
       padding: 14px;
     }
 
@@ -499,8 +471,8 @@
 
     .mini-stat {
       border: 1px solid rgba(60, 64, 67, 0.08);
-      border-radius: 24px;
-      background: #f1f8f4;
+      border-radius: 14px;
+      background: #f8fafc;
       padding: 16px;
     }
 
@@ -529,7 +501,7 @@
     }
 
     .section-kicker {
-      color: var(--green);
+      color: var(--accent);
       font-size: 0.82rem;
       font-weight: 900;
       letter-spacing: 0.12em;
@@ -560,7 +532,7 @@
     .timeline-item,
     .contact-panel {
       border: 1px solid rgba(60, 64, 67, 0.08);
-      border-radius: 28px;
+      border-radius: 18px;
       background: rgba(255, 255, 255, 0.78);
       box-shadow: var(--shadow);
     }
@@ -575,7 +547,7 @@
       margin-bottom: 8px;
       font-size: clamp(2rem, 4vw, 3.3rem);
       line-height: 1;
-      color: var(--green-strong);
+      color: var(--accent-strong);
     }
 
     .metric span,
@@ -623,11 +595,11 @@
     }
 
     .project-card:nth-child(1) {
-      background: #f1f8f4;
+      background: #ffffff;
     }
 
     .project-card:nth-child(2) {
-      background: #e8f0fe;
+      background: #f8fafc;
       color: var(--ink);
     }
 
@@ -637,7 +609,7 @@
     }
 
     .project-card:nth-child(3) {
-      background: #fff8e1;
+      background: #ffffff;
     }
 
     .project-icon {
@@ -646,9 +618,9 @@
       height: 54px;
       place-items: center;
       border: 0;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.72);
-      color: var(--green);
+      border-radius: 14px;
+      background: var(--soft);
+      color: var(--accent);
       margin-bottom: 26px;
     }
 
@@ -674,7 +646,7 @@
     }
 
     .timeline-date {
-      color: var(--green);
+      color: var(--accent);
       font-weight: 900;
     }
 
@@ -684,7 +656,7 @@
 
     .timeline-item h4 {
       margin-bottom: 10px;
-      color: var(--blue);
+      color: var(--accent);
       font-size: 0.95rem;
     }
 
@@ -693,9 +665,7 @@
       grid-template-columns: 1.2fr 0.8fr;
       gap: 30px;
       align-items: center;
-      background:
-        radial-gradient(circle at 88% 18%, rgba(251, 188, 4, 0.24), transparent 24%),
-        linear-gradient(135deg, var(--green-strong), #174ea6);
+      background: var(--ink);
       color: var(--white);
       padding: 34px;
     }
@@ -726,7 +696,7 @@
       place-items: center;
       border: 1px solid rgba(60, 64, 67, 0.12);
       border-radius: 50%;
-      background: var(--green);
+      background: var(--ink);
       color: var(--white);
       box-shadow: 0 14px 30px rgba(60, 64, 67, 0.18);
       transition: transform 0.2s ease;
@@ -823,7 +793,7 @@
         <div>
           <div class="eyebrow">
             <span class="status-dot"></span>
-            Material You inspired portfolio for Android leadership roles
+            Premium resume portfolio for Android leadership roles
           </div>
 
           <h1>
@@ -859,24 +829,21 @@
 
         <aside class="portrait-card" aria-label="Portfolio highlight card">
           <div class="portrait-top">
-            <span class="portrait-badge">MATERIAL YOU</span>
+            <span class="portrait-badge">ONLINE RESUME</span>
             <span class="portrait-badge">10+ YEARS</span>
           </div>
           <div class="lead-visual">
-            <div class="phone-panel" aria-hidden="true">
-              <div class="phone-top">
-                <span class="phone-dot"></span>
-                <span class="material-dots" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-                <span class="android-mark">A</span>
+            <div class="resume-sheet" aria-hidden="true">
+              <div class="resume-head">
+                <span class="resume-avatar">SS</span>
+                <div>
+                  <strong>Soham Sheth</strong>
+                  <span>Android Developer & Team Lead</span>
+                </div>
               </div>
               <div class="lead-card">
-                <small>Android Product UI</small>
-                <strong>Modern apps with clean architecture</strong>
+                <small>Professional Summary</small>
+                <strong>Senior Android lead focused on scalable mobile delivery</strong>
                 <div class="lead-bars">
                   <span></span>
                   <span></span>
