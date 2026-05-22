@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soham Robinkumar Sheth | Android Developer & Team Lead</title>
-  <meta name="description" content="Two-column resume portfolio for Soham Robinkumar Sheth, Android Developer and Team Lead with 10+ years of Android experience." />
+  <title>Soham Robinkumar Sheth | Android Architecture Lead</title>
+  <meta name="description" content="Tech architecture dashboard portfolio for Soham Robinkumar Sheth, Android Developer and Team Lead with 10+ years of Android experience." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -18,15 +18,18 @@
     }
 
     :root {
-      --ink: #111827;
-      --body: #374151;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --soft: #f8fafc;
-      --panel: #ffffff;
-      --accent: #1f2937;
-      --blue: #2563eb;
-      --shadow: 0 22px 55px rgba(15, 23, 42, 0.08);
+      --bg: #08111f;
+      --panel: #101b2d;
+      --panel-strong: #15243b;
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #f8fafc;
+      --body: #cbd5e1;
+      --muted: #94a3b8;
+      --cyan: #22d3ee;
+      --green: #34d399;
+      --blue: #60a5fa;
+      --amber: #fbbf24;
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
     }
 
     html {
@@ -35,160 +38,132 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
-      color: var(--ink);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 16% 12%, rgba(34, 211, 238, 0.15), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(52, 211, 153, 0.12), transparent 26%),
+        linear-gradient(180deg, #08111f 0%, #0b1322 58%, #0d1524 100%);
+      color: var(--text);
       font-family: "Inter", Arial, sans-serif;
-      font-size: 16px;
       line-height: 1.65;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
 
     a {
       color: inherit;
     }
 
-    .page {
+    .container {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 34px 0 42px;
     }
 
-    .topbar {
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 17, 31, 0.86);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 16px 0 28px;
+      gap: 22px;
+      padding: 16px 0;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: var(--ink);
+      color: var(--text);
       font-weight: 800;
       text-decoration: none;
     }
 
     .brand-mark {
       display: grid;
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       place-items: center;
-      border-radius: 10px;
-      background: var(--ink);
-      color: #ffffff;
+      border: 1px solid rgba(34, 211, 238, 0.42);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(52, 211, 153, 0.16));
+      color: var(--cyan);
       font-size: 0.88rem;
-      letter-spacing: 0.02em;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
-    .nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .nav a {
-      text-decoration: none;
-    }
-
-    .nav a:hover {
-      color: var(--ink);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 330px minmax(0, 1fr);
-      gap: 28px;
-      align-items: start;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 24px;
+      gap: 8px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      padding: 26px;
+      border-radius: 999px;
+      background: rgba(16, 27, 45, 0.72);
+      padding: 6px;
     }
 
-    .avatar {
-      display: grid;
-      width: 68px;
-      height: 68px;
-      place-items: center;
-      border-radius: 18px;
-      background: var(--ink);
-      color: #ffffff;
-      font-size: 1.18rem;
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      margin-bottom: 8px;
-      font-size: clamp(2.2rem, 5vw, 4.8rem);
-      font-weight: 800;
-      line-height: 0.98;
-      letter-spacing: 0;
-    }
-
-    .sidebar h1 {
-      font-size: 1.72rem;
-      line-height: 1.1;
-    }
-
-    .role {
-      color: var(--blue);
-      font-size: 0.98rem;
-      font-weight: 800;
-    }
-
-    .location {
-      margin-top: 8px;
+    .nav-links a {
+      border-radius: 999px;
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .actions {
-      display: grid;
-      gap: 10px;
-      margin: 24px 0;
+    .nav-links a:hover {
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--text);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      gap: 9px;
+      min-height: 48px;
+      gap: 10px;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #ffffff;
-      color: var(--ink);
+      border-radius: 12px;
+      padding: 12px 18px;
+      color: var(--text);
       font-weight: 800;
       text-decoration: none;
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      border-color: #cbd5e1;
+      border-color: rgba(34, 211, 238, 0.45);
+      background: rgba(34, 211, 238, 0.08);
     }
 
     .btn-primary {
-      border-color: var(--ink);
-      background: var(--ink);
-      color: #ffffff;
+      border-color: rgba(34, 211, 238, 0.55);
+      background: linear-gradient(135deg, #0891b2, #047857);
+      box-shadow: 0 18px 34px rgba(8, 145, 178, 0.22);
     }
 
     .icon {
-      width: 17px;
-      height: 17px;
+      width: 18px;
+      height: 18px;
       fill: none;
       stroke: currentColor;
       stroke-linecap: round;
@@ -196,428 +171,685 @@
       stroke-width: 2.2;
     }
 
-    .side-section {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-      margin-top: 20px;
+    .hero {
+      padding: 72px 0 48px;
     }
 
-    .side-section h2,
-    .section h2 {
-      margin-bottom: 14px;
-      color: var(--ink);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .contact-list,
-    .plain-list {
+    .hero-grid {
       display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
       gap: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.26);
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.08);
+      color: #a5f3fc;
+      font-size: 0.86rem;
+      font-weight: 800;
+      padding: 8px 12px;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.12);
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .glow {
+      color: var(--cyan);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      margin-bottom: 28px;
       color: var(--body);
-      font-size: 0.92rem;
-      list-style: none;
+      font-size: 1.08rem;
     }
 
-    .contact-list a {
-      color: var(--body);
-      text-decoration: none;
-    }
-
-    .contact-list a:hover {
-      color: var(--blue);
-    }
-
-    .chips {
+    .hero-actions,
+    .contact-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 12px;
+    }
+
+    .stack-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 26px;
     }
 
     .chip {
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: var(--soft);
+      background: rgba(16, 27, 45, 0.74);
       color: var(--body);
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 7px 10px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 8px 11px;
     }
 
-    .content {
-      display: grid;
-      gap: 22px;
-    }
-
-    .hero,
-    .section {
+    .dashboard {
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.88);
+      border-radius: 24px;
+      background: rgba(16, 27, 45, 0.86);
       box-shadow: var(--shadow);
-      padding: 34px;
+      padding: 18px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      margin-bottom: 18px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--soft);
+    .dash-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+    }
+
+    .traffic {
+      display: flex;
+      gap: 7px;
+    }
+
+    .traffic span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .traffic span:nth-child(1) {
+      background: #ef4444;
+    }
+
+    .traffic span:nth-child(2) {
+      background: var(--amber);
+    }
+
+    .traffic span:nth-child(3) {
+      background: var(--green);
+    }
+
+    .dash-title {
       color: var(--muted);
       font-size: 0.82rem;
       font-weight: 800;
-      padding: 7px 11px;
     }
 
-    .summary {
-      max-width: 780px;
-      margin-top: 22px;
-      color: var(--body);
+    .system-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .node,
+    .code-card,
+    .release-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(21, 36, 59, 0.82);
+      padding: 16px;
+    }
+
+    .node strong,
+    .release-card strong {
+      display: block;
+      margin-bottom: 6px;
       font-size: 1.08rem;
     }
 
-    .metric-row {
+    .node span,
+    .release-card span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .node.primary {
+      border-color: rgba(34, 211, 238, 0.35);
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(21, 36, 59, 0.9));
+    }
+
+    .code-card {
+      margin-bottom: 12px;
+      color: #dbeafe;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86rem;
+      line-height: 1.8;
+    }
+
+    .code-card span {
+      color: var(--green);
+    }
+
+    .release-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .status-ring {
+      display: grid;
+      width: 72px;
+      height: 72px;
+      place-items: center;
+      border: 8px solid rgba(34, 211, 238, 0.16);
+      border-top-color: var(--cyan);
+      border-right-color: var(--green);
+      border-radius: 50%;
+      color: var(--text);
+      font-weight: 900;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .section-heading p {
+      color: var(--body);
+    }
+
+    .metric-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 30px;
+      gap: 14px;
+    }
+
+    .metric,
+    .panel,
+    .project-card,
+    .timeline-item,
+    .contact-panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(16, 27, 45, 0.78);
+      box-shadow: var(--shadow);
     }
 
     .metric {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--soft);
-      padding: 16px;
+      padding: 22px;
     }
 
     .metric strong {
       display: block;
-      margin-bottom: 4px;
-      color: var(--ink);
-      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1;
     }
 
-    .metric span {
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-
-    .section-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .item {
-      display: grid;
-      grid-template-columns: 170px minmax(0, 1fr);
-      gap: 22px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
-
-    .item:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .date {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 800;
-    }
-
-    .item h3 {
-      margin-bottom: 4px;
-      font-size: 1.06rem;
-      line-height: 1.3;
-    }
-
-    .item h4 {
-      margin-bottom: 9px;
-      color: var(--blue);
-      font-size: 0.92rem;
-    }
-
-    .item p,
-    .section p {
+    .metric span,
+    .panel p,
+    .project-card p,
+    .timeline-item p,
+    .contact-panel p {
       color: var(--body);
     }
 
-    .work-grid {
+    .panel-grid,
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
 
-    .work-card {
-      border: 1px solid var(--line);
+    .panel,
+    .project-card {
+      padding: 22px;
+    }
+
+    .panel h3,
+    .project-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .panel-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid rgba(34, 211, 238, 0.28);
       border-radius: 14px;
-      background: var(--soft);
-      padding: 18px;
+      background: rgba(34, 211, 238, 0.08);
+      color: var(--cyan);
+      margin-bottom: 18px;
     }
 
-    .work-card h3 {
-      margin-bottom: 10px;
-      font-size: 1rem;
+    .project-card:nth-child(2) {
+      border-color: rgba(52, 211, 153, 0.26);
+      background: rgba(52, 211, 153, 0.08);
     }
 
-    .work-card p {
-      font-size: 0.92rem;
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      padding: 22px;
+      box-shadow: none;
+    }
+
+    .timeline-date {
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 4px;
+    }
+
+    .timeline-item h4 {
+      margin-bottom: 9px;
+      color: var(--blue);
+      font-size: 0.94rem;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.13), rgba(52, 211, 153, 0.09)), rgba(16, 27, 45, 0.86);
+    }
+
+    .contact-panel p {
+      margin-top: 10px;
     }
 
     footer {
-      padding: 28px 0 0;
+      padding: 36px 0;
       color: var(--muted);
-      font-size: 0.9rem;
       text-align: center;
     }
 
-    @media (max-width: 960px) {
-      .layout {
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-heading,
+      .contact-panel {
         grid-template-columns: 1fr;
       }
 
-      .sidebar {
-        position: static;
-      }
-
-      .metric-row,
-      .work-grid {
+      .metric-grid,
+      .panel-grid,
+      .project-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 680px) {
-      .page {
+    @media (max-width: 720px) {
+      .container {
         width: min(100% - 28px, 1180px);
-        padding-top: 18px;
       }
 
-      .topbar {
+      .nav-inner {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .nav {
+      .nav-links {
         flex-wrap: wrap;
-        gap: 12px;
+        border-radius: 16px;
       }
 
-      .hero,
-      .section,
-      .sidebar {
-        padding: 22px;
+      .hero {
+        padding-top: 44px;
       }
 
-      .metric-row,
-      .work-grid,
-      .item {
+      h1 {
+        font-size: clamp(2.7rem, 15vw, 4.1rem);
+      }
+
+      .metric-grid,
+      .panel-grid,
+      .project-grid,
+      .system-map {
         grid-template-columns: 1fr;
       }
 
-      .item {
-        gap: 6px;
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <header class="topbar">
+  <nav class="nav">
+    <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Soham Sheth portfolio home">
         <span class="brand-mark">SS</span>
         <span>Soham Sheth</span>
       </a>
 
-      <nav class="nav" aria-label="Portfolio navigation">
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
+      <div class="nav-links">
+        <a href="#architecture">Architecture</a>
+        <a href="#stack">Stack</a>
         <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
 
-    <main id="top" class="layout">
-      <aside class="sidebar">
-        <div class="avatar">SS</div>
-        <h1>Soham Robinkumar Sheth</h1>
-        <div class="role">Android Developer & Team Lead</div>
-        <div class="location">Ahmedabad, India</div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            Tech Architecture Dashboard for Android leadership roles
+          </div>
 
-        <div class="actions">
-          <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn btn-primary">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            Download Resume
-          </a>
-          <a href="mailto:soham.sheth2@gmail.com" class="btn">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
-            Email Me
-          </a>
-        </div>
+          <h1>
+            Android <span class="glow">architecture</span> lead for scalable mobile systems.
+          </h1>
 
-        <section id="contact" class="side-section">
-          <h2>Contact</h2>
-          <ul class="contact-list">
-            <li><a href="mailto:soham.sheth2@gmail.com">soham.sheth2@gmail.com</a></li>
-            <li><a href="tel:+918401026643">+91 84010 26643</a></li>
-            <li><a href="https://www.linkedin.com/in/soham-robinkumar-sheth" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          </ul>
-        </section>
+          <p class="hero-copy">
+            I am Soham Robinkumar Sheth, an Android Developer and Team Lead with 10+ years of experience building production-ready apps, guiding teams, improving performance, and designing maintainable Android systems.
+          </p>
 
-        <section class="side-section">
-          <h2>Core Skills</h2>
-          <div class="chips">
+          <div class="hero-actions">
+            <a href="mailto:soham.sheth2@gmail.com" class="btn btn-primary">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 7 8 6 8-6"/></svg>
+              Contact Me
+            </a>
+            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Download Resume
+            </a>
+            <a href="https://www.linkedin.com/in/soham-robinkumar-sheth" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          </div>
+
+          <div class="stack-strip">
             <span class="chip">Kotlin</span>
-            <span class="chip">Java</span>
             <span class="chip">Jetpack Compose</span>
             <span class="chip">MVVM</span>
             <span class="chip">Hilt</span>
             <span class="chip">Firebase</span>
-            <span class="chip">Retrofit</span>
-            <span class="chip">Room DB</span>
-            <span class="chip">RxJava</span>
-            <span class="chip">SQLite</span>
             <span class="chip">CI/CD</span>
-            <span class="chip">Android SDK</span>
           </div>
-        </section>
+        </div>
 
-        <section class="side-section">
-          <h2>Focus</h2>
-          <ul class="plain-list">
-            <li>Android architecture ownership</li>
-            <li>Team leadership and mentoring</li>
-            <li>Release quality and delivery</li>
-            <li>Enterprise and healthcare apps</li>
-          </ul>
-        </section>
-      </aside>
+        <aside class="dashboard" aria-label="Android architecture dashboard visual">
+          <div class="dash-top">
+            <div class="traffic"><span></span><span></span><span></span></div>
+            <div class="dash-title">android-system-map.kt</div>
+          </div>
 
-      <div class="content">
-        <section id="summary" class="hero">
-          <span class="eyebrow">Two-column digital CV</span>
-          <h1>Senior Android developer focused on scalable mobile delivery.</h1>
-          <p class="summary">
-            I build production-ready Android applications, guide engineering teams, and bring clean architecture habits to complex mobile products. My experience spans enterprise applications, healthcare BLE-IOT flows, Firebase-backed products, API integrations, performance work, and release-focused execution.
-          </p>
-
-          <div class="metric-row">
-            <div class="metric">
-              <strong>10+</strong>
-              <span>Years Android experience</span>
+          <div class="system-map">
+            <div class="node primary">
+              <strong>Presentation</strong>
+              <span>Compose, XML, UI state</span>
             </div>
-            <div class="metric">
-              <strong>20+</strong>
-              <span>Mobile apps delivered</span>
+            <div class="node">
+              <strong>Domain</strong>
+              <span>Use cases, business rules</span>
             </div>
-            <div class="metric">
-              <strong>5+</strong>
-              <span>Companies supported</span>
+            <div class="node">
+              <strong>Data</strong>
+              <span>Retrofit, Room, Firebase</span>
             </div>
-            <div class="metric">
-              <strong>Lead</strong>
-              <span>Team ownership</span>
+            <div class="node primary">
+              <strong>Delivery</strong>
+              <span>Reviews, releases, CI/CD</span>
             </div>
           </div>
-        </section>
 
-        <section id="experience" class="section">
-          <h2>Experience</h2>
-          <div class="section-grid">
-            <article class="item">
-              <div class="date">Apr 2025 - Present</div>
-              <div>
-                <h3>Android Application Team Leader</h3>
-                <h4>Innvonix Tech Pvt Ltd</h4>
-                <p>Leading Android application teams, improving performance, managing delivery quality, and building enterprise-grade mobile solutions.</p>
-              </div>
-            </article>
-
-            <article class="item">
-              <div class="date">Sep 2024 - Apr 2025</div>
-              <div>
-                <h3>Technical Lead</h3>
-                <h4>TCS</h4>
-                <p>Worked on Android architecture, Agile delivery, project coordination, and developer mentoring for enterprise solutions.</p>
-              </div>
-            </article>
-
-            <article class="item">
-              <div class="date">Feb 2022 - Jun 2024</div>
-              <div>
-                <h3>Lead Android Engineer</h3>
-                <h4>Simform Solutions LLP</h4>
-                <p>Built modern Android applications using Kotlin, MVVM, Hilt, Firebase, Retrofit, and Jetpack libraries while leading cross-functional teams.</p>
-              </div>
-            </article>
-
-            <article class="item">
-              <div class="date">Mar 2021 - Feb 2022</div>
-              <div>
-                <h3>Senior Android Developer</h3>
-                <h4>Openxcell Technolabs</h4>
-                <p>Spearheaded BLE-IOT healthcare applications and implemented scalable Android architecture.</p>
-              </div>
-            </article>
-
-            <article class="item">
-              <div class="date">Dec 2018 - Dec 2020</div>
-              <div>
-                <h3>Senior Android Developer</h3>
-                <h4>Alchemy Technolabs LLP</h4>
-                <p>Optimized application performance, integrated APIs, and improved scalability with MVVM and Kotlin Coroutines.</p>
-              </div>
-            </article>
-
-            <article class="item">
-              <div class="date">Jan 2016 - Nov 2018</div>
-              <div>
-                <h3>Android Developer</h3>
-                <h4>Hyperlink Infosystem</h4>
-                <p>Developed Android applications using Java, SQLite, Firebase, and Material Design principles.</p>
-              </div>
-            </article>
+          <div class="code-card">
+            <div><span>class</span> AndroidLeadPortfolio {</div>
+            <div>&nbsp;&nbsp;<span>stack</span> = Kotlin + MVVM + Hilt</div>
+            <div>&nbsp;&nbsp;<span>focus</span> = Architecture + Quality</div>
+            <div>&nbsp;&nbsp;<span>output</span> = Reliable mobile products</div>
+            <div>}</div>
           </div>
-        </section>
 
-        <section id="work" class="section">
-          <h2>Selected Work Themes</h2>
-          <div class="work-grid">
-            <article class="work-card">
-              <h3>Enterprise Android Apps</h3>
-              <p>Scalable Android applications with clean architecture, API integrations, release discipline, and maintainable codebases.</p>
-            </article>
-
-            <article class="work-card">
-              <h3>BLE-IOT Healthcare</h3>
-              <p>Connected healthcare flows involving Bluetooth communication, device-state handling, and reliable mobile experiences.</p>
-            </article>
-
-            <article class="work-card">
-              <h3>Team Leadership</h3>
-              <p>Mentoring developers, reviewing architecture choices, coordinating delivery, and supporting product priorities.</p>
-            </article>
+          <div class="release-card">
+            <div>
+              <strong>Release confidence</strong>
+              <span>Planning, mentoring, debugging, and production ownership</span>
+            </div>
+            <div class="status-ring">98</div>
           </div>
-        </section>
-
-        <section class="section">
-          <h2>Professional Value</h2>
-          <p>
-            I bring hands-on Android depth with the judgment needed for technical leadership: planning, architecture, debugging, mentoring, release preparation, and clear communication across product and engineering teams.
-          </p>
-        </section>
+        </aside>
       </div>
-    </main>
+    </section>
 
-    <footer>
-      © 2026 Soham Robinkumar Sheth. Android Developer & Team Lead.
-    </footer>
-  </div>
+    <section id="architecture">
+      <div class="container">
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>10+</strong>
+            <span>Years Android engineering</span>
+          </div>
+          <div class="metric">
+            <strong>20+</strong>
+            <span>Mobile applications delivered</span>
+          </div>
+          <div class="metric">
+            <strong>5+</strong>
+            <span>Companies and teams supported</span>
+          </div>
+          <div class="metric">
+            <strong>Lead</strong>
+            <span>Architecture and team ownership</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Architecture Stack</div>
+            <h2>Technical strengths behind reliable Android delivery.</h2>
+          </div>
+          <p>Hands-on engineering depth across app architecture, API integration, local data, Firebase services, team reviews, and release execution.</p>
+        </div>
+
+        <div class="panel-grid">
+          <article class="panel">
+            <div class="panel-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M7 4v16"/><path d="M17 4v16"/><path d="M4 17h16"/></svg>
+            </div>
+            <h3>Modern Android Architecture</h3>
+            <p>Kotlin, Java, MVVM, Hilt, Jetpack libraries, clean layers, UI state handling, and maintainable code structure.</p>
+          </article>
+
+          <article class="panel">
+            <div class="panel-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v10l8 4 8-4V7z"/><path d="M12 3v18"/><path d="m4 7 8 4 8-4"/></svg>
+            </div>
+            <h3>Data and Integrations</h3>
+            <p>Retrofit, Room DB, SQLite, Firebase, API integrations, connected workflows, and dependable data handling.</p>
+          </article>
+
+          <article class="panel">
+            <div class="panel-icon">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Delivery Leadership</h3>
+            <p>Planning, mentoring, code reviews, debugging, quality checks, release preparation, and coordination with product teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Selected Work Themes</div>
+            <h2>Built for real products, devices, and release cycles.</h2>
+          </div>
+          <p>A technical summary of Android product areas represented in my experience, structured for fast recruiter and engineering-manager scanning.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Enterprise Android Apps</h3>
+            <p>Scalable Android applications with clean architecture, API integrations, maintainable modules, and production release discipline.</p>
+          </article>
+
+          <article class="project-card">
+            <h3>BLE-IOT Healthcare</h3>
+            <p>Connected healthcare flows involving Bluetooth communication, device-state handling, edge-case management, and stable app experiences.</p>
+          </article>
+
+          <article class="project-card">
+            <h3>Team Leadership</h3>
+            <p>Managing Android teams, mentoring developers, reviewing architecture decisions, and coordinating delivery across product priorities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Experience Timeline</div>
+            <h2>From Android development to architecture leadership.</h2>
+          </div>
+          <p>A decade of hands-on Android engineering, technical leadership, team mentoring, app performance, and production delivery.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2025 - Present</div>
+            <div>
+              <h3>Android Application Team Leader</h3>
+              <h4>Innvonix Tech Pvt Ltd</h4>
+              <p>Leading Android application teams, improving performance, managing delivery quality, and building enterprise-grade mobile solutions.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Sep 2024 - Apr 2025</div>
+            <div>
+              <h3>Technical Lead</h3>
+              <h4>TCS</h4>
+              <p>Worked on Android architecture, Agile delivery, project coordination, and developer mentoring for enterprise solutions.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Feb 2022 - Jun 2024</div>
+            <div>
+              <h3>Lead Android Engineer</h3>
+              <h4>Simform Solutions LLP</h4>
+              <p>Built modern Android applications using Kotlin, MVVM, Hilt, Firebase, Retrofit, and Jetpack libraries while leading cross-functional teams.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2021 - Feb 2022</div>
+            <div>
+              <h3>Senior Android Developer</h3>
+              <h4>Openxcell Technolabs</h4>
+              <p>Spearheaded BLE-IOT healthcare applications and implemented scalable Android architecture.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Dec 2018 - Dec 2020</div>
+            <div>
+              <h3>Senior Android Developer</h3>
+              <h4>Alchemy Technolabs LLP</h4>
+              <p>Optimized application performance, integrated APIs, and improved scalability with MVVM and Kotlin Coroutines.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Jan 2016 - Nov 2018</div>
+            <div>
+              <h3>Android Developer</h3>
+              <h4>Hyperlink Infosystem</h4>
+              <p>Developed Android applications using Java, SQLite, Firebase, and Material Design principles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <div class="section-kicker">Connect</div>
+            <h2>Ready to discuss Android architecture and leadership roles.</h2>
+            <p>Open to Android development, technical leadership, freelance collaboration, and remote mobile engineering opportunities.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:soham.sheth2@gmail.com" class="btn btn-primary">Email Me</a>
+            <a href="tel:+918401026643" class="btn">Call Me</a>
+            <a href="Soham%20Robinkumar%20Sheth-resume.pdf?v=2" download class="btn">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Soham Robinkumar Sheth. Android Architecture Lead.
+    </div>
+  </footer>
 </body>
 </html>
